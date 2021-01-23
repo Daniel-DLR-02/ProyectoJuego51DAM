@@ -11,25 +11,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int cordx=DatosMapa1.columnasmapa1, cordy=DatosMapa1.filasmapa1;
+		char accion;
 		char letrajugador='A';
 		Jugador pred;
-		boolean [][] llaves=ColisionesMapa1.llaves(cordy,cordx,DatosMapa1.map1.getCords());
 		pred=new Jugador(letrajugador,2,1,0);
+		boolean partida=true;
 		
-		
-		while(true) {
+		while(partida) {
 			System.out.println("Contador llaves:"+pred.getContadorllaves());
-			DibujoMapa1.DibujarMapa(DatosMapa1.map1.getCords(), cordy, cordx,pred);
-			char op;
-			op=Leer.datoChar();
-			PosJugador.PosUpdate(pred,op);
-			if(llaves[pred.getPosy()][pred.getPosx()]) {
-				pred.setContadorllaves(pred.getContadorllaves()+1);
-				llaves[pred.getPosy()][pred.getPosx()]=false;
-				}
-			if(DatosMapa1.c1.getPosx()==1 && DatosMapa1.c1.getPosy()==11) 
-				Interacciones.EventoBotonActivado(DatosMapa1.cords, 12, 12);
+			DibujoMapa1.DibujarMapa(DatosMapa1.map1.getCords(), DatosMapa1.filasmapa1,DatosMapa1.columnasmapa1,pred);
+			accion=Leer.datoChar();
+			PosJugador.PosUpdate(pred,accion);
+			if(DatosMapa1.c1.getPosx()==DatosMapa1.bot1.getPosx() && DatosMapa1.c1.getPosy()==DatosMapa1.bot1.getPosy()) 
+				Interacciones.EventoBotonActivado(DatosMapa1.cords, DatosMapa1.posyPuertafinal,DatosMapa1.posxPuertafinal);
 			
 		}
 	

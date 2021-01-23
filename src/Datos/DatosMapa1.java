@@ -1,16 +1,21 @@
 package Datos;
 
-import Model.Caja;
-import Model.Mapa;
+import Model.*;
 
 public class DatosMapa1 {
 	
 	public static int filasmapa1=15;
-
 	public static int columnasmapa1=24;
 	
 	static int posxCaja=16;
 	static int posyCaja=11;
+	
+	static int posxBoton=1;
+	static int posyBoton=11;
+	
+	public static int posxPuertafinal=12;
+	public static int posyPuertafinal=12;
+	
 	static char modeloCaja='■';
 	
 	public static char[][] cords= {{'_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_'},
@@ -20,7 +25,7 @@ public class DatosMapa1 {
 								   {' ','|','█','█','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|'},
 								   {' ','|','_','_','█','█','|',' ','|','_','_','|','=','|','█','█','|',' ','|','_','_','|','=','|'},
 								   {' ','|','K','|','█','█','|',' ',' ',' ','K','║',' ','|','█','█','|',' ',' ',' ',' ',' ','K','|'},
-								   {' ','|',' ','|','█','█','|',' ',' ',' ',' ','║',' ','|','█','█','|',' ',' ',' ',' ',' ',' ','|'},
+								   {' ','|',' ','|','█','█','|',' ',' ',' ',' ','|',' ','|','█','█','|',' ',' ',' ',' ',' ',' ','|'},
 								   {' ','|',' ','|','█','█','|','=','|','█','█','|','=','|','█','█','|',' ','|','█','█','|','=','|'},
 								   {' ','|',' ','|','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|'},
 								   {'┌','┘',' ','|','_','_','|',' ','|','_','_','|',' ','|','_','_','|','=','|','_','_','|','=','|'},
@@ -31,4 +36,5 @@ public class DatosMapa1 {
 	
 	public static Mapa map1=new Mapa(cords,filasmapa1,columnasmapa1);
 	public static Caja c1=new Caja ( posyCaja,posxCaja, modeloCaja );
+	public static Boton bot1=new Boton(posyBoton,posxBoton);
 }

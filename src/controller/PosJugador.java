@@ -24,7 +24,7 @@ public class PosJugador {
 	
 	public static void PosUpdate(Jugador j1,char op){
 		
-		
+		boolean [][] llaves=ColisionesMapa1.llaves(DatosMapa1.filasmapa1,DatosMapa1.columnasmapa1,DatosMapa1.map1.getCords());
 		boolean [][] Huecos;
 		
 		Huecos=ColisionesMapa1.ComprobarHueco(DatosMapa1.map1.getFilas(),DatosMapa1.map1.getColumnas(),DatosMapa1.map1.getCords());
@@ -35,11 +35,15 @@ public class PosJugador {
 				int newposx=j1.getPosx()-1;
 				if(Huecos[j1.getPosy()][newposx]==false) {
 					BorrarJugador(j1);
+					
 					if(newposx==c1.getPosx() && j1.getPosy()==c1.getPosy())
 						PosCaja.MoverCajaIzquierda(c1);
 					j1.setPosx(newposx);
-					DibujarJugador(j1);
-					
+					if(llaves[j1.getPosy()][j1.getPosx()]) {
+						j1.setContadorllaves(j1.getContadorllaves()+1);
+						llaves[j1.getPosy()][j1.getPosx()]=false;
+					}
+
 				}
 			}
 
@@ -54,6 +58,10 @@ public class PosJugador {
 					if(newposy==c1.getPosy() && j1.getPosx()==c1.getPosx())
 						PosCaja.MoverCajaArriba(c1);
 					j1.setPosy(newposy);
+					if(llaves[j1.getPosy()][j1.getPosx()]) {
+						j1.setContadorllaves(j1.getContadorllaves()+1);
+						llaves[j1.getPosy()][j1.getPosx()]=false;
+					}
 				}
 			}
 
@@ -67,7 +75,11 @@ public class PosJugador {
 					BorrarJugador(j1);
 					if(newposx==c1.getPosx() && j1.getPosy()==c1.getPosy()) 
 						PosCaja.MoverCajaDerecha(c1);
-					j1.setPosx(newposx);						
+					j1.setPosx(newposx);
+					if(llaves[j1.getPosy()][j1.getPosx()]) {
+						j1.setContadorllaves(j1.getContadorllaves()+1);
+						llaves[j1.getPosy()][j1.getPosx()]=false;
+					}
 				}
 			}
 
@@ -82,6 +94,10 @@ public class PosJugador {
 					if(newposy==c1.getPosy() && j1.getPosx()==DatosMapa1.c1.getPosx())
 						PosCaja.MoverCajaAbajo(c1);
 					j1.setPosy(newposy);
+					if(llaves[j1.getPosy()][j1.getPosx()]) {
+						j1.setContadorllaves(j1.getContadorllaves()+1);
+						llaves[j1.getPosy()][j1.getPosx()]=false;
+					}
 					
 				}
 			}
