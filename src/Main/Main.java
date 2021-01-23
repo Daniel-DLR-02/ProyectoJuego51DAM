@@ -19,7 +19,7 @@ public class Main {
 		
 		
 		while(true) {
-			System.out.println("Contador:"+pred.getContadorllaves());
+			System.out.println("Contador llaves:"+pred.getContadorllaves());
 			DibujoMapa1.DibujarMapa(DatosMapa1.map1.getCords(), cordy, cordx,pred);
 			char op;
 			op=Leer.datoChar();

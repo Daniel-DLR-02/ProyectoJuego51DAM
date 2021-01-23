@@ -28,7 +28,7 @@ public class Interacciones {
 			j1.setContadorllaves(j1.getContadorllaves()-1);
 		}
 		else if((j1.getContadorllaves() > 0) && (puertas[j1.getPosy()][j1.getPosx()+1])) {
-			DatosMapa1.cords[j1.getPosy()][j1.getPosx()-1]=' ';
+			DatosMapa1.cords[j1.getPosy()][j1.getPosx()+1]=' ';
 			j1.setContadorllaves(j1.getContadorllaves()-1);
 		}
 		

@@ -65,10 +65,9 @@ public class PosJugador {
 				int newposx=j1.getPosx()+1;
 				if(Huecos[j1.getPosy()][newposx]==false) {
 					BorrarJugador(j1);
-					if(newposx==c1.getPosx() && j1.getPosy()==c1.getPosy())
+					if(newposx==c1.getPosx() && j1.getPosy()==c1.getPosy()) 
 						PosCaja.MoverCajaDerecha(c1);
-						
-					j1.setPosx(newposx);
+					j1.setPosx(newposx);						
 				}
 			}
 

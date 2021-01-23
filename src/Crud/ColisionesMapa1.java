@@ -9,7 +9,7 @@ public class ColisionesMapa1 {
 	
 		for (int i = 0; i < cordy; i++) {
 			for (int j = 0; j < cordx; j++) {
-				if (cords[i][j]=='_' || cords[i][j]=='|' || cords [i][j] == '┘' || cords [i][j] == '=' || cords [i][j] == '┐' || cords [i][j] == '▒'|| cords [i][j] == '╔'|| cords [i][j] == '╗'|| cords [i][j] == '═'|| cords [i][j] == '║'|| cords [i][j] == '▣'|| cords [i][j] == '▢' ) 
+				if (cords[i][j]=='_' || cords[i][j]=='|' || cords [i][j] == '┘' || cords [i][j] == '=' || cords [i][j] == '┐' || cords [i][j] == '▒'|| cords [i][j] == '╔'|| cords [i][j] == '╗'|| cords [i][j] == '═'|| cords [i][j] == '║'|| cords [i][j] == '▣'|| cords [i][j] == '▢'|| cords [i][j] == '█' ) 
 					Huecos[i][j]=true;
 				else 
 					Huecos[i][j]=false;
