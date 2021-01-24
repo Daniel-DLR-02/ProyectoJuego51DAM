@@ -25,6 +25,9 @@ public class Main {
 			if(DatosMapa1.c1.getPosx()==DatosMapa1.bot1.getPosx() && DatosMapa1.c1.getPosy()==DatosMapa1.bot1.getPosy()) 
 				Interacciones.EventoBotonActivado(DatosMapa1.cords, DatosMapa1.posyPuertafinal,DatosMapa1.posxPuertafinal);
 			
+			if(DatosMapa1.c1.getPosx()==DatosMapa1.h1.getPosx() && DatosMapa1.c1.getPosy()==DatosMapa1.h1.getPosy()) 
+				Interacciones.EventoHoyoTapado(DatosMapa1.cords);
+				
 		}
 	
 		

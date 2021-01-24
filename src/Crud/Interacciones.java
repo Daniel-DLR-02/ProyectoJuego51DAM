@@ -9,7 +9,13 @@ public class Interacciones {
 		
 		cords[cordy][cordx]=' ';
 		Datos.DatosMapa1.c1.setModelo('▣');
-		//15  12
+		
+	}
+	
+	public static void EventoHoyoTapado(char [][] cords){
+		
+		Datos.DatosMapa1.h1.setModelo('@');
+		
 	}
 	public static void EventoAbrirPuerta(Jugador j1) {
 		

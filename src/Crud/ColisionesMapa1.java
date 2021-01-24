@@ -2,14 +2,14 @@ package Crud;
 
 public class ColisionesMapa1 {
 	
-	//static int cordx=42,cordy=7;
+
 	public static boolean [] [] ComprobarHueco(int cordy,int cordx, char cords [][]){ //CRUD
 
 		boolean [] [] Huecos = new boolean [cordy] [cordx];
 	
 		for (int i = 0; i < cordy; i++) {
 			for (int j = 0; j < cordx; j++) {
-				if (cords[i][j]=='_' || cords[i][j]=='|' || cords [i][j] == '┘' || cords [i][j] == '=' || cords [i][j] == '┐' || cords [i][j] == '▒'|| cords [i][j] == '╔'|| cords [i][j] == '╗'|| cords [i][j] == '═'|| cords [i][j] == '║'|| cords [i][j] == '▣'|| cords [i][j] == '▢'|| cords [i][j] == '█' ) 
+				if (cords[i][j]=='_' || cords[i][j]=='|' || cords [i][j] == '┘' || cords [i][j] == '=' || cords [i][j] == '┐' || cords [i][j] == '▒'|| cords [i][j] == '╔'|| cords [i][j] == '╗'|| cords [i][j] == '═'|| cords [i][j] == '║'|| cords [i][j] == '▣'|| cords [i][j] == '▢'|| cords [i][j] == '█'|| cords [i][j] == '└'|| cords [i][j] == '┌'|| cords [i][j] == 'O' ) 
 					Huecos[i][j]=true;
 				else 
 					Huecos[i][j]=false;

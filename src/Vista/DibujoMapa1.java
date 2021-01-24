@@ -1,6 +1,7 @@
 package Vista;
 
 
+import Datos.DatosMapa1;
 import Model.Jugador;
 import controller.*;
 
@@ -11,10 +12,12 @@ public class DibujoMapa1 {
 		
 		PosJugador.DibujarJugador(j1);
 		PosCaja.DibujarCaja(Datos.DatosMapa1.c1);
+		Datos.DatosMapa1.cords[DatosMapa1.h1.getPosy()][DatosMapa1.h1.getPosx()]=DatosMapa1.h1.getModelo();
 		
 		for (int i = 0; i < cords.length; i++) {
 			System.out.println(cords[i]);
 		}
+		
 		/*boolean[][]Hueco1=Crud.ColisionesMapa1.ComprobarHueco(cordy, cordx, cords);
 		for (int i = 0; i < cordy; i++) {
 
