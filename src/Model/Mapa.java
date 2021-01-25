@@ -7,7 +7,7 @@ public class Mapa {
 
 	int columnas;
 	
-	char [][] cords;
+	public char [][] cords;
 
 	public Mapa(char [][]cords,int filas,int columnas) {
 		this.cords=cords;

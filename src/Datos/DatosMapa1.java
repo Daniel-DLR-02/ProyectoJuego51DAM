@@ -4,7 +4,7 @@ import Model.*;
 
 public class DatosMapa1 {
 	
-	public static int filasmapa1=15;
+	public static int filasmapa1=17;
 	public static int columnasmapa1=25;
 	
 	static int posxCaja=16;
@@ -16,24 +16,27 @@ public class DatosMapa1 {
 	
 	static int posxHoyo=23;
 	static int posyHoyo=13;
-	static char modeloHoyo='0';
+	static char modeloHoyo='O';
 	
 	public static int posxPuertafinal=12;
 	public static int posyPuertafinal=14;
 	
-	static int posxRein=1;
-	static int posyRein=0;
-	static char modeloRein='!';
 	
+	public static int nextlevely=15;
+	public static int nextlevelx=12;
 	
+	public static char letrajugador='A';
+	public static int Posyjugador=1;
+	public static int Posxjugador=2;
+	public static int LlavesIniciales=0;
 	
-	public static char[][] cords= {{'_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_',' '},
-								   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','K','|',' '},
-								   {' ','┐',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' '},
+	public static char[][] cords= {{' ','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_',' '},
+								   {' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','K','|',' '},
+								   {' ','|',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' '},
 								   {' ','|','█','█','█','█','|','=','|','█','█','|','=','|','█','█','|','=','|','█','█','|','=','|',' '},
 								   {' ','|','█','█','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|',' '},
-								   {' ','|','█','█','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|',' '},
-								   {' ','|','_','_','█','█','|',' ','|','_','_','|','=','|','█','█','|',' ','|','_','_','|','=','|',' '},
+								   {' ','|','█','█','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|','_','_','|','=','|',' '},
+								   {' ','|','_','_','█','█','|',' ','|','_','_','|','=','|','█','█','|',' ',' ',' ',' ',' ',' ','|',' '},
 								   {' ','|','K','|','█','█','|',' ',' ',' ','K','║',' ','|','█','█','|',' ',' ',' ',' ',' ','K','|',' '},
 								   {' ','|',' ','|','█','█','|',' ',' ',' ',' ','|',' ','|','█','█','|',' ',' ',' ',' ',' ',' ','|',' '},
 								   {' ','|',' ','|','█','█','|','=','|','█','█','|','=','|','█','█','|',' ','|','█','█','|','=','|',' '},
@@ -42,13 +45,13 @@ public class DatosMapa1 {
 								   {'┌','┘',' ','|','_','_','|',' ','|','_','_','|',' ','|','_','_','|','=','|','_','_','|','=','└','┐'},
 								   {'|','▢',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|'},
 								   {'└','┐','═','═','═','═','═','═','═','═','═','╗','▒','╔','═','═','═','═','═','═','═','═','═','┌','┘'},
-								   {' ','|','█','█','█','█','█','█','█','█','█','║',' ','║','█','█','█','█','█','█','█','█','█','|',' '},
-								   {' ','|','█','█','█','█','█','█','█','█','█','║','▼','║','█','█','█','█','█','█','█','█','█','|',' '}};
+								   {' ','|','█','█','█','█','█','█','█','█','█','║','▼','║','█','█','█','█','█','█','█','█','█','|',' '},
+								   {' ','|','█','█','█','█','█','█','█','█','█','║','_','║','█','█','█','█','█','█','█','█','█','|',' '}};
 	
 	
-	public static Mapa map1=new Mapa(cords,filasmapa1,columnasmapa1);
-	public static Caja c1=new Caja ( posyCaja,posxCaja, modeloCaja );
-	public static Boton bot1=new Boton(posyBoton,posxBoton);
-	public static Hoyo h1= new Hoyo (posyHoyo,posxHoyo,modeloHoyo);
-	public static Reinicio r1= new Reinicio (posxRein, posyRein, modeloRein);
+		public static Mapa map1=new Mapa(cords,filasmapa1,columnasmapa1);
+		public static Caja c1=new Caja ( posyCaja,posxCaja, modeloCaja );
+	    public static Boton bot1=new Boton(posyBoton,posxBoton);
+		public static Hoyo h1= new Hoyo (posyHoyo,posxHoyo,modeloHoyo);
+		public static Jugador j1=new Jugador(letrajugador,Posxjugador,Posyjugador,LlavesIniciales);
 }

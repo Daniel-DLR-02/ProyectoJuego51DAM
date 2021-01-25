@@ -2,44 +2,44 @@ package controller;
 import Datos.DatosMapa1;
 import Model.Caja;
 import Model.Jugador;
+import Model.Mapa;
 import Crud.*;
 
 public class PosJugador {
 	
 
-	public static void DibujarJugador(Jugador j1) {
+	public static void DibujarJugador(Jugador j1,Mapa map) {
 		
 		int numy=j1.getPosy();
 		int numx=j1.getPosx();
-		DatosMapa1.cords[numy][numx]=j1.getModelo();
+		map.cords[numy][numx]=j1.getModelo();
 	}
 	
-	public static void BorrarJugador(Jugador j1) {
+	public static void BorrarJugador(Jugador j1,Mapa map) {
 		int numy=j1.getPosy();
 		int numx=j1.getPosx();
-		char [][] cords=Datos.DatosMapa1.map1.getCords();
+		char [][] cords=map.cords;
 		cords[numy][numx]=' ';
 		
 	}
 	
-	public static void PosUpdate(Jugador j1,char op){
+	public static void PosUpdate(Jugador j1,Caja c1,char op,Mapa map){
 		
 		boolean [][] llaves;
 		boolean [][] Huecos;
 		boolean [][] ColisionCaja;
 		
-		ColisionCaja=ColisionesMapa1.ColisionesCaja(DatosMapa1.map1.getFilas(),DatosMapa1.map1.getColumnas(),DatosMapa1.map1.getCords());
-		llaves=ColisionesMapa1.llaves(DatosMapa1.map1.getFilas(),DatosMapa1.map1.getColumnas(),DatosMapa1.map1.getCords());
-		Huecos=ColisionesMapa1.ComprobarHueco(DatosMapa1.map1.getFilas(),DatosMapa1.map1.getColumnas(),DatosMapa1.map1.getCords());
+		ColisionCaja=ColisionesMapa.ColisionesCaja(map.getFilas(),map.getColumnas(),map.getCords());
+		llaves=ColisionesMapa.llaves(map.getFilas(),map.getColumnas(),map.getCords());
+		Huecos=ColisionesMapa.ComprobarHueco(map.getFilas(),map.getColumnas(),map.getCords());
 		
-		Caja c1=DatosMapa1.c1;
 		int pasos=5;
 		if(op=='a' || op=='A'){
 			for (int i = 0; i < pasos; i++) {
 				int newposx=j1.getPosx()-1;
 				if(Huecos[j1.getPosy()][newposx]==false) {
 					
-					BorrarJugador(j1);
+					BorrarJugador(j1,map);
 					
 					if(newposx==c1.getPosx() && j1.getPosy()==c1.getPosy()){
 						if(ColisionCaja[c1.getPosy()][c1.getPosx()-1]){
@@ -47,7 +47,7 @@ public class PosJugador {
 						}
 						
 						else {
-							PosCaja.MoverCajaIzquierda(c1);
+							PosCaja.MoverCajaIzquierda(c1,DatosMapa1.map1);
 							j1.setPosx(newposx);
 						}
 				
@@ -70,14 +70,14 @@ public class PosJugador {
 				int newposy=j1.getPosy()-1;
 				
 				if(Huecos[newposy][j1.getPosx()]==false) {
-					BorrarJugador(j1);
+					BorrarJugador(j1,map);
 					if(newposy==c1.getPosy() && j1.getPosx()==c1.getPosx()){
 						if(ColisionCaja[c1.getPosy()+1][c1.getPosx()]){
 							Huecos[c1.getPosy()][c1.getPosx()]=true;
 						}
 						
 						else {
-							PosCaja.MoverCajaArriba(c1);
+							PosCaja.MoverCajaArriba(c1,map);
 							j1.setPosy(newposy);
 						}
 				
@@ -99,14 +99,14 @@ public class PosJugador {
 			for (int i = 0; i <pasos; i++) {
 				int newposx=j1.getPosx()+1;
 				if(Huecos[j1.getPosy()][newposx]==false) {
-					BorrarJugador(j1);
+					BorrarJugador(j1,map);
 					if(newposx==c1.getPosx() && j1.getPosy()==c1.getPosy()){
 						if(ColisionCaja[c1.getPosy()][c1.getPosx()+1]){
 							Huecos[c1.getPosy()][c1.getPosx()]=true;
 						}
 						
 						else {
-							PosCaja.MoverCajaDerecha(c1);
+							PosCaja.MoverCajaDerecha(c1,map);
 							j1.setPosx(newposx);
 						}
 				
@@ -129,14 +129,14 @@ public class PosJugador {
 				int newposy=j1.getPosy()+1;
 				
 				if(Huecos[newposy][j1.getPosx()]==false) {
-					BorrarJugador(j1);
+					BorrarJugador(j1,map);
 					if(newposy==c1.getPosy() && j1.getPosx()==c1.getPosx()){
 						if(ColisionCaja[c1.getPosy()-1][c1.getPosx()]){
 							Huecos[c1.getPosy()][c1.getPosx()]=true;
 						}
 						
 						else {
-							PosCaja.MoverCajaAbajo(c1);
+							PosCaja.MoverCajaAbajo(c1,map);
 							j1.setPosy(newposy);
 						}
 				
@@ -154,12 +154,7 @@ public class PosJugador {
 
 		}
 		else if(op=='e'||op=='E')
-			Interacciones.EventoAbrirPuerta(j1);
-		
-		
-
-
-			
+			Interacciones.EventoAbrirPuerta(j1, map);
 		
 		
 		

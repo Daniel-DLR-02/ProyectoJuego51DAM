@@ -1,44 +1,48 @@
 package Crud;
 
-import Datos.DatosMapa1;
+import Model.Caja;
+import Model.Hoyo;
 import Model.Jugador;
+import Model.Mapa;
 
 public class Interacciones {
 	
-	public static void EventoBotonActivado(char [][] cords,int cordy,int cordx){
+	public static void EventoBotonActivado(char [][] cords,int cordy,int cordx,Caja c1){
 		
 		cords[cordy][cordx]=' ';
-		Datos.DatosMapa1.c1.setModelo('▣');
+		c1.setModelo('▣');
 		
 	}
 	
-	public static void EventoHoyoTapado(char [][] cords){
+	public static void EventoHoyoTapado(Hoyo h1){
 		
-		Datos.DatosMapa1.h1.setModelo('@');
+		h1.setModelo('@');
 		
 	}
-	public static void EventoAbrirPuerta(Jugador j1) {
+	public static void EventoAbrirPuerta(Jugador j1,Mapa map) {
 		
-		boolean [][] puertas=ColisionesMapa1.puertas(DatosMapa1.filasmapa1,DatosMapa1.columnasmapa1,DatosMapa1.map1.getCords());
+		boolean [][] puertas=ColisionesMapa.puertas(map.getFilas(),map.getColumnas(),map.getCords());
 		
 		if((j1.getContadorllaves() > 0) && (puertas[j1.getPosy()+1][j1.getPosx()])) {
-			DatosMapa1.cords[j1.getPosy()+1][j1.getPosx()]=' ';
+			map.cords[j1.getPosy()+1][j1.getPosx()]=' ';
 			j1.setContadorllaves(j1.getContadorllaves()-1);
 		}
 		else if((j1.getContadorllaves() > 0) && (puertas[j1.getPosy()-1][j1.getPosx()])) {
-			DatosMapa1.cords[j1.getPosy()-1][j1.getPosx()]=' ';
+			map.cords[j1.getPosy()-1][j1.getPosx()]=' ';
 			j1.setContadorllaves(j1.getContadorllaves()-1);
 		}
 		else if((j1.getContadorllaves() > 0) && (puertas[j1.getPosy()][j1.getPosx()-1])) {
-			DatosMapa1.cords[j1.getPosy()][j1.getPosx()-1]=' ';
+			map.cords[j1.getPosy()][j1.getPosx()-1]=' ';
 			j1.setContadorllaves(j1.getContadorllaves()-1);
 		}
 		else if((j1.getContadorllaves() > 0) && (puertas[j1.getPosy()][j1.getPosx()+1])) {
-			DatosMapa1.cords[j1.getPosy()][j1.getPosx()+1]=' ';
+			map.cords[j1.getPosy()][j1.getPosx()+1]=' ';
 			j1.setContadorllaves(j1.getContadorllaves()-1);
 		}
 		
+		
 	}
-	
+
+
 	
 }

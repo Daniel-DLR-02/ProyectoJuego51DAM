@@ -1,6 +1,6 @@
 package Crud;
 
-public class ColisionesMapa1 {
+public class ColisionesMapa {
 	
 
 	public static boolean [] [] ComprobarHueco(int cordy,int cordx, char cords [][]){ //CRUD
@@ -52,6 +52,7 @@ public class ColisionesMapa1 {
 			}
 			return obj;
 	}
+	
 	public static boolean [][] puertas (int cordy, int cordx, char [][] cords) {
 		
 		boolean [][] obj= new boolean [cordy][cordx];
