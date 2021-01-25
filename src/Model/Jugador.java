@@ -2,6 +2,7 @@ package Model;
 
 public class Jugador {
 	
+
 	int contadorllaves;
 	char modelo;
 	int posx;

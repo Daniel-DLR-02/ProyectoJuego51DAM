@@ -63,7 +63,7 @@ public class ColisionesMapa1 {
 			}
 		}
 		return obj;
-}
+	}
 
 }
 

@@ -155,6 +155,15 @@ public class PosJugador {
 		}
 		else if(op=='e'||op=='E')
 			Interacciones.EventoAbrirPuerta(j1);
+		
+		
+
+
+			
+		
+		
+		
+
 	}
 	
 }

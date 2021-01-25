@@ -16,15 +16,19 @@ public class DatosMapa1 {
 	
 	static int posxHoyo=23;
 	static int posyHoyo=13;
-	static char modeloHoyo='O';
+	static char modeloHoyo='0';
 	
 	public static int posxPuertafinal=12;
 	public static int posyPuertafinal=14;
 	
+	static int posxRein=1;
+	static int posyRein=0;
+	static char modeloRein='!';
+	
 	
 	
 	public static char[][] cords= {{'_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_',' '},
-								   {'!',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','K','|',' '},
+								   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','K','|',' '},
 								   {' ','┐',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','|',' '},
 								   {' ','|','█','█','█','█','|','=','|','█','█','|','=','|','█','█','|','=','|','█','█','|','=','|',' '},
 								   {' ','|','█','█','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|','█','█','|',' ','|',' '},
@@ -46,4 +50,5 @@ public class DatosMapa1 {
 	public static Caja c1=new Caja ( posyCaja,posxCaja, modeloCaja );
 	public static Boton bot1=new Boton(posyBoton,posxBoton);
 	public static Hoyo h1= new Hoyo (posyHoyo,posxHoyo,modeloHoyo);
+	public static Reinicio r1= new Reinicio (posxRein, posyRein, modeloRein);
 }

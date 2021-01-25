@@ -13,6 +13,7 @@ public class DibujoMapa1 {
 		PosJugador.DibujarJugador(j1);
 		PosCaja.DibujarCaja(Datos.DatosMapa1.c1);
 		Datos.DatosMapa1.cords[DatosMapa1.h1.getPosy()][DatosMapa1.h1.getPosx()]=DatosMapa1.h1.getModelo();
+		Datos.DatosMapa1.cords[DatosMapa1.r1.getPosy()][DatosMapa1.r1.getPosx()]=DatosMapa1.r1.getModelo();
 		
 		for (int i = 0; i < cords.length; i++) {
 			System.out.println(cords[i]);
