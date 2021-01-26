@@ -47,7 +47,7 @@ public class PosJugador {
 						}
 						
 						else {
-							PosCaja.MoverCajaIzquierda(c1,DatosMapa1.map1);
+							PosCaja.MoverCajaIzquierda(c1,map);
 							j1.setPosx(newposx);
 						}
 				

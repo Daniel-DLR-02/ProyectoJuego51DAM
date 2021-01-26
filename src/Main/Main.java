@@ -13,15 +13,16 @@ import Crud.*;
 public class Main {
 
 
+
 	public static void main(String[] args) {
 		
 		char accion = 0;
 		int nivel=1;
-		int op=0;
-		
+		int op;
 		
 		do {
-			System.out.println("1. Comenzar partida");
+			//System.out.println("1. Comenzar partida");
+			Vista.Mensajes.Menu();
 			op=Leer.datoInt();
 			
 			switch (op) {
@@ -44,8 +45,11 @@ public class Main {
 								Interacciones.EventoBotonActivado(DatosMapa1.map1.cords, DatosMapa1.posyPuertafinal,
 										DatosMapa1.posxPuertafinal,DatosMapa1.c1);
 							if (DatosMapa1.c1.getPosx() == DatosMapa1.h1.getPosx()
-									&& DatosMapa1.c1.getPosy() == DatosMapa1.h1.getPosy())
+									&& DatosMapa1.c1.getPosy() == DatosMapa1.h1.getPosy()) {
+								accion = 'q';
+								op = 0;
 								Interacciones.EventoHoyoTapado(DatosMapa1.h1);
+							}
 							if (DatosMapa1.j1.getPosy() == DatosMapa1.nextlevely
 									&& DatosMapa1.j1.getPosx() == DatosMapa1.nextlevelx)
 								nivel=2;
@@ -62,11 +66,21 @@ public class Main {
 								Interacciones.EventoBotonActivado(DatosMapa2.map2.cords, DatosMapa2.posyPuertafinal,
 										DatosMapa2.posxPuertafinal,DatosMapa2.c1);
 							if (DatosMapa2.c1.getPosx() == DatosMapa2.h1.getPosx()
-									&& DatosMapa2.c1.getPosy() == DatosMapa2.h1.getPosy())
-								Interacciones.EventoHoyoTapado(DatosMapa2.h1);
+									&& DatosMapa2.c1.getPosy() == DatosMapa2.h1.getPosy()) {
+								accion = 'q';
+								op = 0;
+								Interacciones.EventoHoyoTapado(DatosMapa1.h1);
+							}
 							if (DatosMapa2.j1.getPosy() == DatosMapa2.nextlevely
 									&& DatosMapa2.j1.getPosx() == DatosMapa2.nextlevelx)
 								nivel = 3;
+							
+						}
+						if(nivel==3) {
+							
+							accion = 'q';
+							op = 0;
+							Vista.Mensajes.Victoria();
 							
 						}
 					

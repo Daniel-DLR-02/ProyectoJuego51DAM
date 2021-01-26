@@ -17,6 +17,7 @@ public class Interacciones {
 	public static void EventoHoyoTapado(Hoyo h1){
 		
 		h1.setModelo('@');
+		Vista.Mensajes.Lose();
 		
 	}
 	public static void EventoAbrirPuerta(Jugador j1,Mapa map) {
